@@ -104,6 +104,7 @@ function App() {
           />
           
           {results && <ResultsDisplay results={results} />}
+          
         </div>
       </div>
     </div>

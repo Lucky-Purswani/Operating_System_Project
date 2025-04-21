@@ -1,4 +1,5 @@
 import React from 'react';
+import { RiArrowDropDownLine } from "react-icons/ri";
 
 function ProcessInput({ 
   processes, 
@@ -18,19 +19,20 @@ function ProcessInput({
       {/* Algorithm Selection */}
       <div className="mb-5">
         <label className="block text-sm font-medium mb-2 text-gray-700">Scheduling Algorithm</label>
-        <div className="relative">
-          <select 
-            value={algorithm}
-            onChange={(e) => setAlgorithm(e.target.value)}
-            className="w-full p-2.5 border rounded-md bg-white border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none pr-8"
-          >
-            <option value="fcfs">First-Come-First-Served (FCFS)</option>
-            <option value="sjf">Shortest Job First (SJF)</option>
-            <option value="srtf">Shortest Remaining Time First (SRTF)</option>
-            <option value="rr">Round Robin (RR)</option>
-            <option value="priority">Priority Scheduling</option>
-          </select>
-        </div>
+        <div className="relative w-full">
+        <select
+          value={algorithm}
+          onChange={(e) => setAlgorithm(e.target.value)}
+          className="w-full p-2.5 pr-10 border rounded-md bg-white border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none"
+        >
+          <option value="fcfs">First-Come-First-Served (FCFS)</option>
+          <option value="sjf">Shortest Job First (SJF)</option>
+          <option value="srtf">Shortest Remaining Time First (SRTF)</option>
+          <option value="rr">Round Robin (RR)</option>
+          <option value="priority">Priority Scheduling</option>
+        </select>
+        <RiArrowDropDownLine className="absolute top-1/2 right-2 -translate-y-1/2 pointer-events-none text-xl text-gray-500" />
+      </div>
       </div>
       
       {/* Time Quantum for Round Robin */}
